@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Milk Ledger</title>
+    <link rel="stylesheet" href="../styles/ledger.css">
+</head>
+
+<body>
+    <nav>
+        <div class="ml-logo" aria-label="Milk Ledger Logo">
+            <span class="ml-top">MILK</span>
+            <span class="ml-bottom">Ledger</span>
+        </div>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="ledger.html">Ledger</a></li>
+            <li><a href="../api/auth/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h1>Transaction History</h1>
+        <div>
+            <span id="display_name" style="font-weight:bold;"></span>
+        </div>
+    </div>
+
+    <div class="filter-bar">
+        <label>From:</label>
+        <input type="date" id="startDate">
+
+        <label>To:</label>
+        <input type="date" id="endDate">
+
+        <button onclick="fetchLedger()" style="padding: 5px 15px; cursor: pointer;">Filter Records</button>
+        <button onclick="resetFilters()" style="padding: 5px 15px; cursor: pointer;">Show Last 30 Days</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Milk Type</th>
+                <th>Quantity (L)</th>
+                <th>SNF</th>
+                <th>Amount (₹)</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="ledgerTableBody">
+            <tr>
+                <td colspan="6" style="text-align:center;">Loading...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="../js/utils/auth_guard.js"></script>
+    <script src="../js/user/get_ledger.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Customer - Milk Ledger</title>
+    <link rel="stylesheet" href="../styles/add_customer.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="ml-logo">
+            <span class="ml-top">MILK</span>
+            <span class="ml-bottom">Ledger</span>
+        </div>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="add_customer.html">Add Customer</a></li>
+            <li><a href="add_entry.html">Add Entry</a></li>
+            <li><a href="../api/auth/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <h1>Register New Farmer</h1>
+            <a href="dashboard.html" class="back-link">Back to Dashboard</a>
+
+            <form id="customerForm">
+                <label>Full Name:</label>
+                <input type="text" id="name" placeholder="John Doe" required>
+
+                <label>Address:</label>
+                <textarea id="address" required></textarea>
+
+                <label>Phone Number:</label>
+                <input type="text" id="phone" required>
+
+                <label>Join Date:</label>
+                <input type="date" id="join_date" required>
+
+                <label>Initial Password:</label>
+                <input type="text" id="password"  required>
+
+                <button type="submit">Register Farmer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/admin/add_customer.js"></script>
+    <script src="../js/utils/auth_guard.js"></script>
+
+</body>
+</html>

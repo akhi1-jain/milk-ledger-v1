@@ -1,0 +1,164 @@
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        :root {
+            --border: #1f2937;
+            --bg: #f7f8fc;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background: var(--bg);
+            color: #111827;
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+        .ml-logo {
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            padding: 6px 12px;
+        }
+
+        .ml-top {
+            font-family: Georgia, serif;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 6px;
+        }
+
+        .ml-bottom {
+            font-family: "Edwardian Script ITC", "Palace Script MT",
+                        "Segoe Script", "Brush Script MT",
+                        "Lucida Handwriting", cursive;
+            font-size: 34px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .ml-bottom::after {
+            content: "";
+            position: absolute;
+            left: 2px;
+            bottom: -8px;
+            width: 110%;
+            height: 2px;
+            background: #111;
+            opacity: 0.25;
+        }
+
+        .ml-bottom::before {
+            content: "•";
+            position: absolute;
+            right: -14px;
+            top: 6px;
+            font-size: 14px;
+            opacity: 0.55;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+        nav {
+            border: 2px solid var(--border);
+            background: linear-gradient(90deg, #ffffff, #f3f6ff);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #111827;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+
+        nav ul li a:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        /* =========================
+           PAGE WRAPPER
+        ========================= */
+        .page-wrapper {
+            width: 100%;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--card);
+            padding: 40px;
+            border-radius: 14px;
+            border: 2px solid var(--border);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* =========================
+           RESPONSIVE NAV FIX
+        ========================= */
+        @media (max-width: 900px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .ml-logo {
+                margin-right: 0;
+                align-items: center;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-wrapper {
+                padding: 20px 15px;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .container h1 {
+                font-size: 24px;
+            }
+        }

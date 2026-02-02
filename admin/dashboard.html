@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Milk Ledger</title>
+    <link rel="stylesheet" href="../styles/admin_dashboard.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="ml-logo">
+            <span class="ml-top">MILK</span>
+            <span class="ml-bottom">Ledger</span>
+        </div>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="add_customer.html">Add Customer</a></li>
+            <li><a href="add_entry.html">Add Entry</a></li>
+            <li><a href="../api/auth/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <h1>Hello, Admin!</h1>
+            <p>Welcome to the Milk Ledger Admin Dashboard.</p>
+        </div>
+    </div>
+
+    <script src="../js/utils/auth_guard.js"></script>
+
+</body>
+</html>

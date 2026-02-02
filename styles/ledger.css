@@ -1,0 +1,399 @@
+/* CERTIFICATE STYLE LOGO - DUOTONE (BLACK/WHITE) */
+        .ml-logo {
+            margin-right: auto;
+            /* keeps logo left, links right */
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1;
+            padding: 6px 12px;
+            border-radius: 10px;
+            user-select: none;
+        }
+
+        /* MILK - strong, stamped, uppercase */
+        .ml-logo .ml-top {
+            font-family: "Georgia", "Times New Roman", serif;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 6px;
+            color: #111;
+            opacity: 0.92;
+        }
+
+        /* Ledger - certificate calligraphy */
+        .ml-logo .ml-bottom {
+            font-family: "Edwardian Script ITC", "Palace Script MT",
+                "Segoe Script", "Brush Script MT",
+                "Lucida Handwriting", cursive;
+            font-size: 34px;
+            font-weight: 500;
+            font-style: italic;
+            color: #111;
+            margin-top: 2px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        /* elegant underline stroke like certificates */
+        .ml-logo .ml-bottom::after {
+            content: "";
+            position: absolute;
+            left: 2px;
+            bottom: -8px;
+            width: 110%;
+            height: 2px;
+            background: #111;
+            opacity: 0.25;
+            border-radius: 999px;
+        }
+
+        /* tiny flourish dot for premium feel */
+        .ml-logo .ml-bottom::before {
+            content: "•";
+            position: absolute;
+            right: -14px;
+            top: 6px;
+            font-size: 14px;
+            opacity: 0.55;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .ml-logo .ml-top {
+                font-size: 12px;
+                letter-spacing: 4px;
+            }
+
+            .ml-logo .ml-bottom {
+                font-size: 28px;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        :root {
+            --border: #1f2937;
+            --bg: #f7f8fc;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --blue: #2563eb;
+            --green: #22c55e;
+            --red: #ef4444;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background: var(--bg);
+            color: #111827;
+
+            /* FIX: prevent side scroll/extra overflow */
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            border: 2px solid var(--border);
+            background: linear-gradient(90deg, #ffffff, #f3f6ff);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #111827;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: 0.2s ease;
+            white-space: nowrap;
+        }
+
+        nav ul li a:hover {
+            background: rgba(37, 99, 235, 0.10);
+            color: var(--blue);
+        }
+
+        /* HEADER ROW (Transaction History + username) */
+        /* simple: applies to your only heading */
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+
+        /* style the flex header container (still safe & simple) */
+        body>div {
+            max-width: 1100px;
+            margin: 25px auto 10px auto;
+            padding: 0 20px;
+        }
+
+        #display_name {
+            font-size: 15px;
+            color: var(--muted);
+            background: #ffffff;
+            border: 1px solid rgba(31, 41, 55, 0.25);
+            padding: 6px 10px;
+            border-radius: 10px;
+        }
+
+        /* FILTER BAR */
+        .filter-bar {
+            max-width: 1100px;
+            margin: 15px auto;
+            padding: 16px 20px;
+            border: 2px solid var(--border);
+            background: var(--card);
+            box-shadow: var(--shadow);
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+        }
+
+        .filter-bar label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .filter-bar input[type="date"] {
+            border: 2px solid rgba(31, 41, 55, 0.65);
+            padding: 8px 10px;
+            font-size: 14px;
+            outline: none;
+            min-width: 160px;
+            border-radius: 10px;
+            background: #fbfbff;
+            transition: 0.2s ease;
+        }
+
+        .filter-bar input[type="date"]:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        /* BUTTONS (no variable issues) */
+        .filter-bar button {
+            border: 2px solid var(--border);
+            background: #ffffff;
+            font-size: 14px;
+            padding: 8px 14px;
+            cursor: pointer;
+            transition: 0.2s ease;
+            border-radius: 10px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .filter-bar button:hover {
+            background: rgba(37, 99, 235, 0.12);
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px auto 40px auto;
+            border-collapse: collapse;
+            border: 2px solid var(--border);
+            background: var(--card);
+            box-shadow: var(--shadow);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(90deg, #eef2ff, #ffffff);
+        }
+
+        th,
+        td {
+            border: 1px solid rgba(31, 41, 55, 0.25);
+            padding: 12px 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th {
+            font-weight: 800;
+            color: #111827;
+        }
+
+        /* moderate styling (simple) */
+        tbody tr:nth-child(even) {
+            background: #fafbff;
+        }
+
+        tbody tr:hover {
+            background: rgba(37, 99, 235, 0.06);
+        }
+
+        /* SIMPLE STATUS COLORS (works if cell contains Accepted/Rejected text) */
+        td.status-accepted {
+            color: #22c55e;
+            font-weight: 800;
+        }
+
+        td.status-rejected {
+            color: #ef4444;
+            font-weight: 800;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            /* Beginner friendly: make top header stack */
+            body>div {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .filter-bar {
+                justify-content: flex-start;
+            }
+
+            /* FIX: keep table as table in tablet sizes (removes right whitespace) */
+            table {
+                display: table;
+                width: 100%;
+                max-width: 100%;
+                table-layout: fixed;
+            }
+
+            th,
+            td {
+                word-wrap: break-word;
+                font-size: 13px;
+                padding: 10px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* simple selector now */
+            h1 {
+                font-size: 22px;
+            }
+
+            .filter-bar {
+                padding: 12px 12px;
+            }
+
+            .filter-bar input[type="date"] {
+                width: 100%;
+            }
+
+            .filter-bar button {
+                width: 100%;
+            }
+        }
+
+        /* ===========================
+           RESPONSIVE FIX AFTER LOGO
+           (UPDATED FIX)
+        =========================== */
+
+        @media (max-width: 768px) {
+            nav {
+                justify-content: space-between;
+                flex-wrap: nowrap;
+                gap: 10px;
+            }
+
+            .ml-logo {
+                margin-right: auto;
+            }
+
+            nav ul {
+                width: auto;
+                justify-content: flex-end;
+                flex-wrap: nowrap;
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .ml-logo {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            nav ul {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 6px 8px;
+            }
+
+            #display_name {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+            }
+
+            .filter-bar label {
+                width: 100%;
+                text-align: left;
+            }
+
+            .filter-bar input[type="date"] {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .filter-bar button {
+                width: 100%;
+            }
+
+            /* On mobile allow scroll if needed */
+            table {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+        }

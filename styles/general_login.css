@@ -1,0 +1,194 @@
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        :root {
+            --border: #1f2937;
+            --bg: #f7f8fc;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --danger: #ef4444;
+        }
+
+        body {
+            background: var(--bg);
+            color: #111827;
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+        .ml-logo {
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            padding: 6px 12px;
+        }
+
+        .ml-top {
+            font-family: Georgia, serif;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 6px;
+        }
+
+        .ml-bottom {
+            font-family: "Edwardian Script ITC", "Palace Script MT",
+                        "Segoe Script", "Brush Script MT",
+                        "Lucida Handwriting", cursive;
+            font-size: 34px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .ml-bottom::after {
+            content: "";
+            position: absolute;
+            left: 2px;
+            bottom: -8px;
+            width: 110%;
+            height: 2px;
+            background: #111;
+            opacity: 0.25;
+        }
+
+        .ml-bottom::before {
+            content: "•";
+            position: absolute;
+            right: -14px;
+            top: 6px;
+            font-size: 14px;
+            opacity: 0.55;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+        nav {
+            border: 2px solid var(--border);
+            background: linear-gradient(90deg, #ffffff, #f3f6ff);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #111827;
+            font-weight: 600;
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+
+        nav ul li a:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        /* =========================
+           LOGIN CARD
+        ========================= */
+        .page-wrapper {
+            width: 100%;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            background: var(--card);
+            padding: 35px;
+            border-radius: 14px;
+            border: 2px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .login-card h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .login-card label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .error {
+            color: var(--danger);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: linear-gradient(180deg, #ffffff, #f3f6ff);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+            transition: 0.2s ease;
+        }
+
+        .login-card button:hover {
+            background: #111827;
+            color: white;
+        }
+
+        /* =========================
+           RESPONSIVE NAV FIX
+        ========================= */
+        @media (max-width: 900px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .ml-logo {
+                margin-right: 0;
+                align-items: center;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-wrapper {
+                padding: 40px 15px;
+            }
+
+            .login-card {
+                padding: 25px;
+            }
+        }

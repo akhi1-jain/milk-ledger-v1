@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Daily Entry - Milk Ledger</title>
+    <link rel="stylesheet" href="../styles/add_entry.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="ml-logo">
+            <span class="ml-top">MILK</span>
+            <span class="ml-bottom">Ledger</span>
+        </div>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="add_customer.html">Add Customer</a></li>
+            <li><a href="add_entry.html">Add Entry</a></li>
+            <li><a href="../api/auth/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <h1>Add Daily Milk Entry</h1>
+            <a href="dashboard.html" class="back-link">Back to Dashboard</a>
+
+            <form id="entryForm">
+                <label>Customer Reg No:</label>
+                <input type="text" id="reg_no" required>
+
+                <label>Milk Tally (Liters):</label>
+                <input type="number" step="0.01" id="tally" required>
+
+                <label>SNF (Quality):</label>
+                <input type="number" step="0.01" id="snf" required>
+
+                <label>Type of Milk:</label>
+                <select id="milk_type">
+                    <option value="Cow">Cow</option>
+                    <option value="Buffalo">Buffalo</option>
+                </select>
+
+                <label>Date:</label>
+                <input type="date" id="date" required>
+
+                <label>Total Amount:</label>
+                <input type="number" step="0.01" id="total_amount" required>
+
+                <label>Status:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="status_accept" name="status" value="Accepted" checked>
+                        <label for="status_accept">Accepted</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="status_reject" name="status" value="Rejected">
+                        <label for="status_reject">Rejected</label>
+                    </div>
+                </div>
+
+                <button type="submit">Submit Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/admin/add_entry.js"></script>
+    <script src="../js/utils/auth_guard.js"></script>
+
+</body>
+</html>

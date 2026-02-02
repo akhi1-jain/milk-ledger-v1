@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Milk Ledger</title>
+    <link rel="stylesheet" href="styles/general_login.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="ml-logo">
+            <span class="ml-top">MILK</span>
+            <span class="ml-bottom">Ledger</span>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-wrapper">
+        <form id="loginForm" class="login-card">
+            <h2>Milk Ledger Login</h2>
+            
+            <label>User ID (e.g., UID1):</label>
+            <input type="text" id="reg_no" placeholder="Enter ID" required>
+
+            <label>Password:</label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+
+            <p id="errorMsg" class="error"></p>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script src="js/auth.js"></script>
+
+</body>
+</html>
